@@ -8,17 +8,16 @@ stty -ixon
 #source /etc/bash/bashrc.d/bash_completion.sh
 
 # Vars
-export PATH="$PATH:/home/$USER/.scripts:$HOME/.local/bin:/usr/sbin/:/opt/*"
-export PS1='\[\e[1;39m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n\$ '
+export PATH="$PATH:/home/$USER/.scripts:$HOME/.local/bin:/usr/sbin/"
 export PS4='+$0 line $LINENO: '
 export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 export EDITOR=vim
 export HISTSIZE=5000
 export HISTFILESIZE=5000
+#export LC_ALL="ksh_DE.UTF-8"
 
-# do not overwrite files when redirecting output by default.
+# do not overwrite files when redirecting output by default.  set -o noclobber
 set -o noclobber
-
 # wrap these commands for interactive use to avoid accidental overwrites.
 #rm() { command rm -i "$@"; }
 cp() { command cp -i "$@"; }
@@ -28,28 +27,22 @@ mv() { command mv -i "$@"; }
 alias x='startx'
 alias v='vim -p'
 alias vim='vim -p'
+alias bim='vim -p'
+alias bi='vim -p'
 alias clines='wc -l *.[hc]'
 alias ls='ls -hN --color=auto --group-directories-first'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias py='python3'
-alias vi3='vim ~/.config/i3/config'
-alias vb='vim ~/.config/bspwm/bspwmrc'
 alias play='mpv --no-audio-display'
 alias audiodl="youtube-dl -x --audio-format mp3 --embed-thumbnail --ignore-errors"
 alias npr='firefox https://www.houstonpublicmedia.org/listen-live/'
-alias osudir="cd $HOME/.wine/drive_c/users/Local\ Settings/Application\ Data/osu\!"
 alias ps="ps alxf"
-alias bim='vim -p'
-alias bi='vim -p'
 alias alisa='alias'
-alias cs2440='firefox https://www.dropbox.com/sh/hh95knm4xlr59so/AADWle-4jyQ4eDCb1U143J24a?dl=0'
-alias fixgnome='dconf-editor org.gnome.shell.keybindings'
-alias gl="g++ main.cpp -lGL -lglfw -lGLEW && MESA_GL_VERSION_OVERRIDE=3.3 MESA_GLSL_VERSION_OVERRIDE=330 ./a.out"
-
-alias transmission='transmission-gtk'
 alias mapkeys="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
-alias reboot='sudo reboot'
+alias maki='make'
+alias scrapechan='python3 ~/.scripts/scrapechan.py'
+alias opengl_compatibility="echo 'MESA_GL_VERSION_OVERRIDE=3.3 MESA_GLSL_VERSION_OVERRIDE=330'"
 
 # Functions
 function aur {
@@ -67,16 +60,19 @@ function aur {
 function got {
 	git clone https://github.com/tekipaki/$1
 }
+function clone {
+	#dir=$(pwd)
+	#konsole --workdir $dir
+	urxvt -cd "$(pwd)" &
+	#konsole --workdir "$(pwd)" &
+}
 function cd {
 	clear;
     builtin cd "$@";
-	ls;
-    }
-
-function clone {
-	urxvt -cd $PWD >/dev/null 2>&1 &
-	#xfce4-terminal --working-directory=$PWD >/dev/null 2>&1 &
+	ls -cF;
 }
+
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -106,7 +102,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\033[01;35m\](>^_^)> '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
