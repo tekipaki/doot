@@ -1,0 +1,6 @@
+compton --config ~/.config/compton.conf &
+feh --bg-fill ~/Pictures/stripe4.png &
+#sleep 1.2
+~/.scripts/startup.sh &
+sleep 2
+xdo lower -N "Polybar" &
