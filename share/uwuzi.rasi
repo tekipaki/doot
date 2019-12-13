@@ -48,7 +48,7 @@
 #message {
     border:       1px dash 0px 0px ;
     border-color: @background;
-    padding:      1px ;
+    padding:      0px ;
 }
 #textbox {
     text-color: @selected-normal-foreground;
@@ -57,13 +57,13 @@
     fixed-height: 0;
     border:       2px solid 0px 0px ;
     border-color: #000000;
-    spacing:      4px ;
+    spacing:      0px ;
     scrollbar:    false;
-    padding:      20px 4px 4px ;
+    padding:      0px 0px 0px ;
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 0px ;
 }
 #element.normal.normal {
     background-color: @normal-background;
@@ -118,7 +118,7 @@
 #inputbar {
     spacing:    0;
     text-color: @selected-normal-foreground;
-    padding:    1px ;
+    padding:    0px ;
 }
 #case-indicator {
     spacing:    0;

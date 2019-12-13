@@ -9,6 +9,11 @@ set encoding=utf-8
 autocmd BufRead */polybar/config set syntax=dosini
 autocmd FileType asm setlocal shiftwidth=8 softtabstop=0 tabstop=8 smarttab noexpandtab
 
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+
 set showmatch
 highlight ColorColumn ctermbg=0
 set foldcolumn=4

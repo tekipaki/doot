@@ -1,5 +1,5 @@
 compton --config ~/.config/compton.conf &
-feh --bg-fill ~/Pictures/stripe4.png &
+feh --bg-fill ~/.pape &
 #sleep 1.2
 ~/.scripts/startup.sh &
 sleep 2

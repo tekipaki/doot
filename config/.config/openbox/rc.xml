@@ -57,8 +57,8 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Tewi [PfEd]</name>
-      <size>8</size>
+      <name>tewi</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -66,8 +66,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>PF Arma Five</name>
-      <size>8</size>
+      <name>tewi</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -75,8 +75,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>PF Arma Five</name>
-      <size>8</size>
+      <name>tewi</name>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -84,8 +84,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>PF Arma Five</name>
-      <size>8</size>
+      <name>tewi</name>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -93,8 +93,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>PF Arma Five</name>
-      <size>8</size>
+      <name>tewi</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -103,7 +103,7 @@
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>PF Arma Five</name>
-      <size>8</size>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -261,8 +261,8 @@
     </keybind>
     <keybind key="W-space">
       <action name="execute">
-        <!--<command> rofi -show run -width 16 -location 1 -xoffset 674 -yoffset 64 -lines 4</command>-->
-        <command> rofi -show run -width 16 -lines 4 -font "tewi medium 12"</command>
+        <!--<command> jofi -show run -width 16 -location 1 -xoffset 674 -yoffset 64 -lines 4</command>-->
+        <command> rofi -show run -width 70% -location 1 -xoffset 240 -yoffset 18 -lines 4 -font "tewi medium 10"</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -379,9 +379,15 @@
     </keybind>
     <keybind key="W-S-r">
       <action name="Execute">
-        <command>openbox --restart</command>
+        <command>openbox --restart </command>
       </action>
     </keybind>
+    <keybind key="W-S-0">
+      <action name="Execute">
+        <command>xdo lower -N "Polybar"</command>
+      </action>
+    </keybind>
+ 
     <keybind key="W-j">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
@@ -485,6 +491,10 @@
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
+      <mousebind button="W-S-Left" action="Drag">
+		  <action name="Resize"/>
+	  </mousebind>
+<!--
       <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
@@ -523,6 +533,7 @@
           <to>next</to>
         </action>
       </mousebind>
+-->
     </context>
     <context name="Titlebar">
       <mousebind button="Left" action="Drag">
