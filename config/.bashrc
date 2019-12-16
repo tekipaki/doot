@@ -18,6 +18,7 @@ export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 export EDITOR=vim
 export HISTSIZE=5000
 export HISTFILESIZE=5000
+export TERM=rxvt-256color
 #export LC_ALL="ksh_DE.UTF-8"
 
 # do not overwrite files when redirecting output by default.  set -o noclobber
@@ -28,6 +29,8 @@ cp() { command cp -i "$@"; }
 mv() { command mv -i "$@"; }
 
 # Aliases
+alias myip='curl ifconfig.me && printf "\n"'
+alias fucking='sudo'
 alias pup='sudo parrot-upgrade'
 alias rick='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias parrot='curl parrot.live'
@@ -68,7 +71,7 @@ function aur {
 }
 function wsc {
 	sudo systemctl start windscribe;
-	wait;
+	sleep 1.5;
 	printf "Windscribe service started\n";
 	windscribe connect ranch;
 }

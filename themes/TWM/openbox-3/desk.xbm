@@ -1,0 +1,4 @@
+#define desk_width 6
+#define desk_height 6
+static unsigned char desk_bits[] = {
+ 0x3F, 0x21, 0x2D, 0x2D, 0x21, 0x3F };

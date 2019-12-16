@@ -5,7 +5,38 @@ foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #7f1e31
+
+[twm]
+fg = #4e4e4e
+bg = #cccccc
+alertbg = #aada2c
+alertfg = #4e4e4e
+
+[bar/twm-taskbar]
+;monitor = ${env:MONITOR:HDMI-1}
+fixed-center = true;
+width = 100%
+height = 18
+background = ${twm.bg}
+foreground = ${twm.fg}
+line-size = 0
+border-size = 0
+;border-color = #181818
+font-0 = lucy tewi:style=Bold:size=11;1
+bottom = false
+tray-position = left
+tray-offset-x = 0
+tray-padding = 3
+tray-transparent = false
+override-redirect = true
+module-margin-left = 1
+module-margin-right = 2
+padding-left = 1
+padding-right = 1
+modules-right = date
+modules-center = filesystem memory-light cpu-light proc temperature-twm bright wlan eth uptime gee ayy battery
+
 
 [bar/status]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -18,17 +49,38 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 0
-line-color = #f00
 border-size = 2
 border-color = #000000
 padding-left = 0
 padding-right = 0
-module-margin-left = 1
-module-margin-right = 2
-;font-0 = PF Arma Five:fontformat=truetype:size=9;0
-font-0 = tewi:style=medium:fontformat=truetype:size=10;0
+module-margin = 2
+;separator = |
+font-0 = lucy tewi:style=Regular:size=11;0
 override-redirect = true
 modules-center = filesystem memory cpu proc temperature bright wlan eth uptime gee ayy battery
+
+[bar/status-light]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 70%
+height = 42
+offset-x = 15%
+offset-y = 2%
+radius = 0.0
+fixed-center = true
+background = ${colors.foreground}
+foreground = ${colors.background}
+line-size = 0
+border-size = 2
+border-color = #181818
+padding-left = 0
+padding-right = 0
+module-margin-left = 1
+module-margin-right = 2
+font-0 = lucy tewi:style=Regular:size=11;0
+override-redirect = true
+modules-center = filesystem memory-light cpu-light proc temperature bright wlan eth uptime gee ayy battery
+
+
 
 
 [module/filesystem]
@@ -36,7 +88,7 @@ type = internal/fs
 interval = 25
 mount-0 = /
 ;label-mounted = %{F#dfdfdf}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = %{F#dfdfdf}SSD: %percentage_used%%
+label-mounted = %{F$twm.fg}SSD: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground}
 
@@ -50,20 +102,36 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage:2%%
 
+[module/cpu-light]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU: "
+format-prefix-foreground = ${twm.fg}
+label = %percentage:2%%
+
+
+
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "MEM: "
-;format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-foreground = ${colors.foreground}
 format-underline = #4bffdc
 label = %percentage_used%%
 
+[module/memory-light]
+type = internal/memory
+interval = 2
+format-prefix = "MEM: "
+format-prefix-foreground = ${twm.fg}
+label = %percentage_used%%
+
+
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp4s0
 interval = 3.0
 format-connected = WLAN: <label-connected>
 format-connected-underline = #9f78e1
@@ -79,7 +147,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eth0
+interface = enp0s25
 interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -93,7 +161,8 @@ type = internal/date
 interval = 10
 date =
 date-alt = " %Y-%m-%d"
-time = %H:%M %p
+;time = %H:%M %p
+time = %a %m/%d %I:%M %p
 time-alt = %H:%M:%S
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -141,11 +210,31 @@ format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.foreground}
+label-warn-background = ${colors.alert}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/temperature-twm]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = TEMP: <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${twm.alertfg}
+label-warn-background = ${twm.alertbg}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${twm.alertfg}
+
+
 
 
 ########################
@@ -186,6 +275,6 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 0
-margin-bottom = 18
+margin-top = 18
+margin-bottom = 0
 

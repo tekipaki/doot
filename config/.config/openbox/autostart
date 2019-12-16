@@ -1,6 +1,9 @@
-compton --config ~/.config/compton.conf &
-feh --bg-fill ~/.pape &
+nm-applet &
+pulseaudio &
+pasystray &
+feh --bg-fill ~/.pape
 #sleep 1.2
-~/.scripts/startup.sh &
+#~/.scripts/start-openbox-dark.sh &
+~/.scripts/start-openbox-light.sh &
 sleep 2
 xdo lower -N "Polybar" &
