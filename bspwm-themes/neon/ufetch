@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# ufetch-arch - tiny system info for arch
+
+## INFO
+
+# user is already defined
+host="$(cat /etc/hostname)"
+os='Arch'
+kernel="$(uname -r)"
+uptime="$(~/.scripts/system-uptime-pretty.sh)"
+packages="$(pacman -Q | wc -l)"
+shell="$(basename "$SHELL")"
+
+## UI DETECTION
+
+if [ -n "${DE}" ]; then
+	ui="${DE}"
+	uitype='DE'
+elif [ -n "${WM}" ]; then
+	ui="${WM}"
+	uitype='WM'
+elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
+	ui="${XDG_CURRENT_DESKTOP}"
+	uitype='DE'
+elif [ -n "${DESKTOP_SESSION}" ]; then
+	ui="${DESKTOP_SESSION}"
+	uitype='DE'
+elif [ -f "${HOME}/.xinitrc" ]; then
+	ui="$(tail -n 1 "${HOME}/.xinitrc" | cut -d ' ' -f 2)"
+	uitype='WM'
+elif [ -f "${HOME}/.xsession" ]; then
+	ui="$(tail -n 1 "${HOME}/.xsession" | cut -d ' ' -f 2)"
+	uitype='WM'
+else
+	ui='unknown'
+	uitype='UI'
+fi
+
+## DEFINE COLORS
+
+# probably don't change these
+if [ -x "$(command -v tput)" ]; then
+	bold="$(tput bold)"
+	black="$(tput setaf 0)"
+	red="$(tput setaf 1)"
+	green="$(tput setaf 2)"
+	yellow="$(tput setaf 3)"
+	blue="$(tput setaf 4)"
+	magenta="$(tput setaf 5)"
+	cyan="$(tput setaf 6)"
+	white="$(tput setaf 7)"
+	reset="$(tput sgr0)"
+fi
+
+# you can change these
+# SPECIAL
+lc="${reset}${bold}${blue}"         # labels
+nc="${reset}${bold}${blue}"         # user and hostname
+ic="${reset}"                       # info
+
+# REGULAR
+c0="${reset}${black}"                # first color
+c1="${reset}${red}"                # second color
+c2="${reset}${green}"                # third color
+c3="${reset}${yellow}"                # third color
+c4="${reset}${blue}"                # third color
+c5="${reset}${magenta}"                # third color
+c6="${reset}${cyan}"                # third color
+c7="${reset}${white}"                # third color
+
+# BOLD
+c8="${reset}${bold}${black}" 
+c9="${reset}${bold}${red}" 
+c10="${reset}${bold}${green}"
+c11="${reset}${bold}${yellow}"
+c12="${reset}${bold}${blue}"
+c13="${reset}${bold}${magenta}"
+c14="${reset}${bold}${cyan}"
+c15="${reset}${bold}${white}"
+
+
+## OUTPUT
+
+cat <<EOF
+
+${c10}        /\\         ${c10}${USER}${c10}@${c10}${host}${reset}
+${c10}       /  \\        ${c10}OS:        ${c10}${os}${reset}
+${c10}      /\\   \\       ${c10}KERNEL:    ${c10}${kernel}${reset}
+${c13}     /  __  \\      ${c13}UPTIME:    ${c13}${uptime}${reset}
+${c13}    /  (  )  \\     ${c13}PACKAGES:  ${c13}${packages}${reset}
+${c14}   / __|  |__\\\\    ${c14}SHELL:     ${c14}${shell}${reset}
+${c14}  /.\`        \`.\\   ${c14}${uitype}:        ${c14}${ui}${reset}
+
+EOF
