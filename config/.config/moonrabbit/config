@@ -23,7 +23,7 @@
 [File Types]
 # Text
 $/usr/bin/vim {
-	.<none> .txt .h .c .cpp .sh .conf .html .css .json .log .xpi .js
+	.<none> .txt .h .c .cpp .sh .conf .html .css .json .log .xpi .js .sqlite .py .tex .s .cs .o .md
 }
 # Music
 /usr/bin/mpv {
@@ -38,8 +38,10 @@ $/usr/bin/vim {
 	.pdf .djvu .epub
 }
 # Images
-/usr/bin/imvr {
-	.gif .jpg .jpeg .png
+/usr/bin/imv {
+	.gif .jpg .jpeg .png .JPG .JPEG
 }
 [End]
 
+[Keybindings]
+[End]

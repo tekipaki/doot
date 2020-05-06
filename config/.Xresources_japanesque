@@ -1,10 +1,4 @@
-!.Xresources_light
-
-!! COLOR SCHEME
-!! Light Gray: 	#cccccc
-!! Dark Gray: 	#4e4e4e
-!! Tennis Ball: #a7d72b WRONG
-!! Tennis Ball: #aada2c 
+! solarized japanesque
 
 URxvt.termName: 			rxvt-256color
 URxvt.iso14755:         	False
@@ -13,9 +7,7 @@ URxvt*scrollBar: 			false
 URxvt*saveLines:			1000
 !URxvt*internalBorder: 		32
 !URxvt*externalBorder: 		10
-!URxvt*geometry:			78x27
-URxvt*geometry:				53x17
-!URxvt*depth: 32
+URxvt*geometry:			78x27
 URxvt*depth: 24
 
 
@@ -28,11 +20,14 @@ URxvt.matcher.button:   	1
 !URxvt.boldFont: 			xft:lucy tewi:style=Bold:size=12
 !URxvt.italicFont: 			xft:lucy tewi:style=Regular:size=12
 !URxvt.boldItalicFont: 		xft:lucy tewi:style=Bold Italic:size=12
+!URxvt.font: 				xft:Terminus (TTF):style=Regular:size=12
+!URxvt.boldFont: 			xft:Terminus (TTF):style=Bold:size=12
+!URxvt.italicFont: 			xft:Terminus (TTF):style=Regular:size=12
+!URxvt.boldItalicFont: 		xft:Terminus (TTF):style=Bold Italic:size=12
 URxvt.font: 				xft:Hack:style=Regular:size=10
 URxvt.boldFont: 			xft:Hack:style=Bold:size=10
 URxvt.italicFont: 			xft:Hack:style=Regular:size=10
 URxvt.boldItalicFont: 		xft:Hack:style=Bold Italic:size=10
-
 
 
 Xft*antialias: 				True
@@ -55,29 +50,48 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-0x2b: 	perl:font-size:increase
 URxvt.keysym.Control-0x2d: 	perl:font-size:decrease
 
+!
+! Generated with :
+! XRDB2Xreources.py
+!
+*.foreground:  #f7f6ec
+*.background:  #1e1e1e
+*.cursorColor: #edcf4f
+!
+! Black
+*.color0:      #343935
+*.color8:      #595b59
+!
+! Red
+*.color1:      #cf3f61
+*.color9:      #d18fa6
+!
+! Green
+*.color2:      #7bb75b
+*.color10:     #767f2c
+!
+! Yellow
+*.color3:      #e9b32a
+*.color11:     #78592f
+!
+! Blue
+*.color4:      #4c9ad4
+*.color12:     #135979
+!
+! Magenta
+*.color5:      #a57fc4
+*.color13:     #604291
+!
+! Cyan
+*.color6:      #389aad
+*.color14:     #76bbca
+!
+! White
+*.color7:      #fafaf6
+*.color15:     #b2b5ae
+!
+! Bold, Italic, Underline
+*.colorBD:     #fffffa
+!*.colorIT:
+!*.colorUL:
 
-URxvt*background: 			#cccccc
-URxvt*foreground: 			#4e4e4e
-URxvt*cursorColor: 			#4e4e4e
-URxvt*highlightColor: 		#aada2c
-URxvt*highlightTextColor:	#4e4e4e
-!URxvt*colorUL: 				#
-URxvt*underlineColor: 		#4e4e4e
-
-URxvt*color0: 				#aada2c
-URxvt*color1: 				#4e4e4e
-URxvt*color2: 				#4e4e4e
-URxvt*color3: 				#4e4e4e
-URxvt*color4: 				#4e4e4e
-URxvt*color5: 				#4e4e4e
-URxvt*color6: 				#4e4e4e
-URxvt*color7: 				#4e4e4e
-URxvt*color8: 				#aada2c
-URxvt*color9: 				#4e4e4e
-URxvt*color10: 				#4e4e4e
-URxvt*color11: 				#4e4e4e
-URxvt*color12: 				#4e4e4e
-URxvt*color13: 				#4e4e4e
-URxvt*color14: 				#4e4e4e
-URxvt*color15: 				#4e4e4e
-!*colorUL: 					#4e4e4e

@@ -1,3 +1,3 @@
-xrandr --auto
-exec openbox-session
-#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
+#exec herbstluftwm --locked -c $HOME/.config/herbstluftwm/autostart
+exec bspwm -c ~/.config/bspwm/bspwmrc-peachy
+#exec bspwm -c ~/.config/bspwm/bspwmrc-neon

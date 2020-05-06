@@ -18,7 +18,7 @@ wintypes :
 	};
 };
 
-shadow = false;
+shadow = true;
 no-dnd-shadow = true;
 clear-shadow = true;
 shadow-radius = 2;
@@ -66,6 +66,6 @@ glx-swap-method = "undefined";
 shadow-exclude-reg = "x18+0+0";
 opacity-rule = [
   "93:class_g = 'URxvt' && focused",
-  "80:class_g = 'URxvt' && !focused"
+  "88:class_g = 'URxvt' && !focused"
 ];
 

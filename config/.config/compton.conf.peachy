@@ -18,20 +18,16 @@ wintypes :
 	};
 };
 
-shadow = false;
+shadow = true;
 no-dnd-shadow = true;
 clear-shadow = true;
 shadow-radius = 2;
-shadow-offset-x = 8;
-shadow-offset-y = 6;
-#shadow-opacity = 1.00;
-#shadow-red = 0.31;
-#shadow-green = 0.31;
-#shadow-blue = 0.31;
-shadow-opacity = 0.40;
-shadow-red = 0.0;
-shadow-green = 0.0;
-shadow-blue = 0.0;
+shadow-offset-x = 11;
+shadow-offset-y = 8;
+shadow-red = 0.47;
+shadow-green = 0.22;
+shadow-blue = 0.33;
+shadow-opacity = 0.50;
 shadow-exclude = [ "name = 'Notification'", "class_g = 'Conky'", "class_g ?= 'Notify-osd'", "class_g = 'Cairo-clock'", "class_g = 'Dmenu'", "name = 'Polybar tray window'" ];
 shadow-ignore-shaped = false;
 xinerama-shadow-crop = false;
@@ -65,7 +61,6 @@ glx-copy-from-front = false;
 glx-swap-method = "undefined";
 shadow-exclude-reg = "x18+0+0";
 opacity-rule = [
-  "93:class_g = 'URxvt' && focused",
-  "80:class_g = 'URxvt' && !focused"
+  "94:class_g = 'URxvt' && focused",
+  "94:class_g = 'URxvt' && !focused"
 ];
-

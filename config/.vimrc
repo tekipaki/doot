@@ -35,6 +35,8 @@ filetype plugin indent on    " required
 "| |  | | | |    ___) |  _  || |  | |  "
 "|_|  |_| |_|   |____/|_| |_|___| |_|  "
 """"""""""""""""""""""""""""""""""""""""
+" FUCK EM UP!
+"set rightleft
 
 " INDENTATION
 let g:indentLine_enabled = 1
@@ -55,9 +57,11 @@ map <C-b> :NERDTreeToggle<cr>
 "autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" YOUCOMPLETEME
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
 set completeopt-=preview
 
-"set rightleft
 hi clear
 
 " STANDARD COLORS
@@ -72,6 +76,11 @@ hi Pmenu 															ctermfg=7 ctermbg=4
 hi PmenuSel 													ctermfg=7 ctermbg=6
 hi WildMenu 					cterm=none 			ctermfg=7 ctermbg=15
 hi FoldColumn 				cterm=none
+
+" EDITOR COLORS (Tab pages...)
+hi TabLine						cterm=none 			ctermfg=7 ctermbg=0
+hi TabLineFill				cterm=none 			ctermfg=7 ctermbg=0
+hi TabLineSel					cterm=none 			ctermfg=0 ctermbg=7
 
 " WARNINGS
 hi WarningMsg 				cterm=none 			ctermfg=0 ctermbg=2

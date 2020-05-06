@@ -22,7 +22,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Vars
-export PS1='${debian_chroot:+($debian_chroot)}\033[01;36m\][$PWD]\[\033[00;36m\]\n>> '
+export PS1='${debian_chroot:+($debian_chroot)}\033[01;30m\][$PWD]\[\033[00;30m\]\n> '
 export EDITOR=vim
 export PATH="$PATH:/home/$USER/.scripts:$HOME/.local/bin:/usr/sbin/:/usr/local/bin"
 export PS4='+$0 line $LINENO: '
@@ -95,7 +95,7 @@ function wsc {
 	windscribe connect ranch;
 }
 function play {
-	mpv --shuffle --no-audio-display $@
+	mpv --no-audio-display "$@"
 }
 function got {
 	git clone https://github.com/cadwalladr/$1

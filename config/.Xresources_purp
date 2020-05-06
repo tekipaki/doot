@@ -1,0 +1,79 @@
+!.Xresources_purp
+
+
+! https://colorhunt.co/palette/159618
+! #484C7F 					Darker
+! #AC8DAF 					...
+! #DDB6C6 					...
+! #F1D4D4 					Lighter
+
+URxvt.termName: 			rxvt-256color
+URxvt.iso14755:         	False
+!URxvt.reverseVideo:     	True
+URxvt*scrollBar: 			false
+URxvt*saveLines:			1000
+!URxvt*internalBorder: 		32
+!URxvt*externalBorder: 		10
+!URxvt*geometry:			78x27
+URxvt*geometry:				53x17
+!URxvt*depth: 32
+URxvt*depth: 24
+
+
+URxvt.perl-ext-common:  	default,matcher
+URxvt.urlLauncher:      	/usr/bin/firefox
+URxvt.matcher.button:   	1
+
+
+URxvt.font: 				xft:tewi:style=Regular:size=11
+URxvt.boldFont: 			xft:tewi:style=Bold:size=11
+URxvt.italicFont: 			xft:tewi:style=Regular:size=11
+URxvt.boldItalicFont: 		xft:tewi:style=Bold Italic:size=11
+
+
+Xft*antialias: 				True
+URxvt.letterSpace:      	0
+Xft.autohint:   			0
+!Xft.dpi:        			96
+Xft.hinting:    			True
+Xft.hintstyle:  			hintfull
+Xft.lcdfilter:  			lcddefault
+Xft.rgba:       			none
+	
+
+
+!URxvt.keysym.Home:         \033[1~
+!URxvt.keysym.End:          \033[4~
+URxvt.keysym.Control-Up:   	\033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-0x2b: 	perl:font-size:increase
+URxvt.keysym.Control-0x2d: 	perl:font-size:decrease
+
+
+URxvt*background: 			#f1d4d4
+URxvt*foreground: 			#484c7f
+URxvt*cursorColor: 			#a4bdc1
+URxvt*highlightColor: 		#484c7f
+URxvt*highlightTextColor:	#f1d4d4
+;URxvt*highlightTextColor:	#ddb6c6
+URxvt*underlineColor: 		#ddb6c6
+
+URxvt*color0: 				#DDB6C6
+URxvt*color1: 				#484c7f
+URxvt*color2: 				#484c7f
+URxvt*color3: 				#484c7f
+URxvt*color4: 				#484c7f
+URxvt*color5: 				#484c7f
+URxvt*color6: 				#484c7f
+URxvt*color7: 				#484c7f
+URxvt*color8: 				#ac8daf
+URxvt*color9: 				#484c7f 
+URxvt*color10: 				#484c7f
+URxvt*color11: 				#484c7f
+URxvt*color12: 				#484c7f
+URxvt*color13: 				#484c7f
+URxvt*color14: 				#484c7f
+URxvt*color15: 				#484c7f
+!*colorUL: 					#484c7f

@@ -10,7 +10,7 @@ wintypes :
 	dock :
 	{
 	fade = false;
-	shadow = false;
+	shadow = true;
 	shadow-radius = 5;
 	shadow-offset-x = -5;
 	shadow-offset-y = 2;
@@ -18,23 +18,22 @@ wintypes :
 	};
 };
 
-shadow = false;
+
+shadow = true;
 no-dnd-shadow = true;
 clear-shadow = true;
-shadow-radius = 2;
-shadow-offset-x = 8;
-shadow-offset-y = 6;
-#shadow-opacity = 1.00;
-#shadow-red = 0.31;
-#shadow-green = 0.31;
-#shadow-blue = 0.31;
-shadow-opacity = 0.40;
+shadow-radius = 20;
+shadow-offset-x = -19;
+shadow-offset-y = -19;
 shadow-red = 0.0;
-shadow-green = 0.0;
-shadow-blue = 0.0;
-shadow-exclude = [ "name = 'Notification'", "class_g = 'Conky'", "class_g ?= 'Notify-osd'", "class_g = 'Cairo-clock'", "class_g = 'Dmenu'", "name = 'Polybar tray window'" ];
+shadow-green = 1.0;
+shadow-blue = 0.38;
+shadow-opacity = 1.00;
+shadow-exclude = [ "name = 'Notification'", "class_g = 'Conky'", "class_g ?= 'Notify-osd'", "class_g = 'Cairo-clock'", "class_g = 'Dmenu'", "name = 'Polybar tray window'", "class_g = 'URxvt' && !focused", "class_g = 'firefox' && !focused","class_g = 'Zathura' && !focused" ];
 shadow-ignore-shaped = false;
 xinerama-shadow-crop = false;
+
+
 menu-opacity = 1.0;
 inactive-opacity = 1.0;
 active-opacity = 1.0;
@@ -65,7 +64,6 @@ glx-copy-from-front = false;
 glx-swap-method = "undefined";
 shadow-exclude-reg = "x18+0+0";
 opacity-rule = [
-  "93:class_g = 'URxvt' && focused",
-  "80:class_g = 'URxvt' && !focused"
+  "96:class_g = 'URxvt' && focused",
+  "96:class_g = 'URxvt' && !focused"
 ];
-

@@ -1,10 +1,4 @@
-!.Xresources_light
-
-!! COLOR SCHEME
-!! Light Gray: 	#cccccc
-!! Dark Gray: 	#4e4e4e
-!! Tennis Ball: #a7d72b WRONG
-!! Tennis Ball: #aada2c 
+! test
 
 URxvt.termName: 			rxvt-256color
 URxvt.iso14755:         	False
@@ -13,9 +7,7 @@ URxvt*scrollBar: 			false
 URxvt*saveLines:			1000
 !URxvt*internalBorder: 		32
 !URxvt*externalBorder: 		10
-!URxvt*geometry:			78x27
-URxvt*geometry:				53x17
-!URxvt*depth: 32
+URxvt*geometry:			78x27
 URxvt*depth: 24
 
 
@@ -28,11 +20,14 @@ URxvt.matcher.button:   	1
 !URxvt.boldFont: 			xft:lucy tewi:style=Bold:size=12
 !URxvt.italicFont: 			xft:lucy tewi:style=Regular:size=12
 !URxvt.boldItalicFont: 		xft:lucy tewi:style=Bold Italic:size=12
+!URxvt.font: 				xft:Terminus (TTF):style=Regular:size=12
+!URxvt.boldFont: 			xft:Terminus (TTF):style=Bold:size=12
+!URxvt.italicFont: 			xft:Terminus (TTF):style=Regular:size=12
+!URxvt.boldItalicFont: 		xft:Terminus (TTF):style=Bold Italic:size=12
 URxvt.font: 				xft:Hack:style=Regular:size=10
 URxvt.boldFont: 			xft:Hack:style=Bold:size=10
 URxvt.italicFont: 			xft:Hack:style=Regular:size=10
 URxvt.boldItalicFont: 		xft:Hack:style=Bold Italic:size=10
-
 
 
 Xft*antialias: 				True
@@ -56,28 +51,43 @@ URxvt.keysym.Control-0x2b: 	perl:font-size:increase
 URxvt.keysym.Control-0x2d: 	perl:font-size:decrease
 
 
-URxvt*background: 			#cccccc
-URxvt*foreground: 			#4e4e4e
-URxvt*cursorColor: 			#4e4e4e
-URxvt*highlightColor: 		#aada2c
-URxvt*highlightTextColor:	#4e4e4e
-!URxvt*colorUL: 				#
-URxvt*underlineColor: 		#4e4e4e
+URxvt*backgroundPixmap: /home/haruhi/Pictures/Wallpaper/tiles/amitk_med_gray_tile4_rev.png;style=tiled
 
-URxvt*color0: 				#aada2c
-URxvt*color1: 				#4e4e4e
-URxvt*color2: 				#4e4e4e
-URxvt*color3: 				#4e4e4e
-URxvt*color4: 				#4e4e4e
-URxvt*color5: 				#4e4e4e
-URxvt*color6: 				#4e4e4e
-URxvt*color7: 				#4e4e4e
-URxvt*color8: 				#aada2c
-URxvt*color9: 				#4e4e4e
-URxvt*color10: 				#4e4e4e
-URxvt*color11: 				#4e4e4e
-URxvt*color12: 				#4e4e4e
-URxvt*color13: 				#4e4e4e
-URxvt*color14: 				#4e4e4e
-URxvt*color15: 				#4e4e4e
-!*colorUL: 					#4e4e4e
+
+! special
+*.foreground:   #e3d5c9
+*.background:   #090705
+*.cursorColor:  #e3d5c9
+
+! black
+*.color0:       #110e0a
+*.color8:       #90c2de
+
+! red
+*.color1:       #1d1814
+*.color9:       #8aa767
+
+! green
+*.color2:       #302923
+*.color10:      #cbb2de
+
+! yellow
+*.color3:       #4b4138
+*.color11:      #99b876
+
+! blue
+*.color4:       #6d5f52
+*.color12:      #abdb6a
+
+! magenta
+*.color5:       #968372
+*.color13:      #e3b688
+
+! cyan
+*.color6:       #c5ad98
+*.color14:      #e4b0c1
+
+! white
+*.color7:       #ebe1d9
+*.color15:      #8da96d
+
