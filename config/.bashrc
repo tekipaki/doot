@@ -22,7 +22,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Vars
-export PS1='${debian_chroot:+($debian_chroot)}\033[01;30m\][$PWD]\[\033[00;30m\]\n> '
+export PS1='${debian_chroot:+($debian_chroot)}\033[01;38m\][$PWD]\[\033[00;38m\]\n> '
 export EDITOR=vim
 export PATH="$PATH:/home/$USER/.scripts:$HOME/.local/bin:/usr/sbin/:/usr/local/bin"
 export PS4='+$0 line $LINENO: '
@@ -32,11 +32,12 @@ export HISTSIZE=5000
 export HISTFILESIZE=5000
 #export TERM=rxvt-unicode-256color
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export GPODDER_HOME="$HOME/Music/gPodder"
-export GPODDER_DOWNLOAD_DIR="$HOME/Music/gPodder/Downloads"
+export GPODDER_HOME="$HOME/Audio/gPodder"
+export GPODDER_DOWNLOAD_DIR="$HOME/Audio/gPodder/Downloads"
 export GTK_OVERLAY_SCROLLING=0
 
 # Aliases
+alias wtr='curl wttr.in/hou'
 alias whatgpu='glxinfo|egrep "OpenGL vendor|OpenGL renderer*"'
 alias pig='ping archlinux.org'
 alias vdw='vim /home/haruhi/Documents/Programs/dwm-6.2/config.h'
