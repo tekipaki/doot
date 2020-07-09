@@ -38,6 +38,9 @@ filetype plugin indent on    " required
 " FUCK EM UP!
 "set rightleft
 
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+
 " INDENTATION
 let g:indentLine_enabled = 1
 "let g:indentLine_setColors = 0
