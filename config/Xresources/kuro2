@@ -1,0 +1,212 @@
+!.Xresources kuro2
+! FONT
+URxvt.font:						xft:Hack:style=Regular:size=9
+URxvt.boldFont:				xft:Hack:style=Bold:size=9
+URxvt.italicFont:			xft:Hack:style=Italic:size=9
+URxvt.boldItalicFont:	xft:Hack:style=Bold Italic:size=9
+Xft*antialias: 				True
+URxvt.letterSpace:    0
+Xft.autohint:   			0
+!Xft.dpi:        			96
+Xft.hinting:    			True
+Xft.hintstyle:  			hintfull
+Xft.lcdfilter:  			lcddefault
+Xft.rgba:       			none
+
+! MOUSE
+URxvt*mouseWheelScrollPage: true
+	
+! TERM
+URxvt.termName: 			rxvt-256color
+URxvt.iso14755:         	False
+!URxvt.reverseVideo:     	True
+URxvt*scrollBar: 			false
+URxvt*saveLines:			1000
+URxvt*internalBorder: 42
+!URxvt*externalBorder: 		10
+URxvt*geometry:			78x27
+URxvt*depth: 16
+URxvt.urlLauncher:      	/usr/bin/firefox
+URvxt.url-select.button:  1
+URxvt.url-select.launcher:/usr/bin/firefox-bin
+URxvt.matcher.button:   	1
+URxvt*perl-ext-common:		default,url-select,vtwheel,matcher
+ URxvt.clipboard.autocopy: True
+
+! KEYSYM
+!URxvt.keysym.Home:         \033[1~
+!URxvt.keysym.End:          \033[4~
+URxvt.keysym.Control-Up:   	\033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-0x2b: 	perl:font-size:increase
+URxvt.keysym.Control-0x2d: 	perl:font-size:decrease
+URxvt.keysym.M-u:						perl:url-select:select_next
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+URxvt.keysym.C-7: command:\033]11;#ff0000\007
+
+! special
+#define BG #050505
+#define FG #c4bc98
+#define CURSOR 		#746c48
+#define BLACK1 		#392925
+#define BLACK2 		#544b2e
+#define RED1   		#98724c
+#define RED2 	 		#af652f
+#define GREEN1 		#908f32
+#define GREEN2 		#c3c13d
+#define YELLOW1 	#aa964c
+#define YELLOW2 	#c8b55b
+#define BLUE1 		#7b854e
+#define BLUE2 		#70a16c
+#define MAGENTA1  #6b5644
+#define MAGENTA2  #98724c
+#define CYAN1     #5c5142
+#define CYAN2     #778725
+#define WHITE1    #c8b55b
+#define WHITE2    #e4dc8c
+
+*.foreground:   FG
+*.background:   BG
+*.cursorColor:  CURSOR
+
+! black
+*.color0:       BLACK1
+*.color8:       BLACK2
+
+! red
+*.color1:       RED1
+*.color9:       RED2
+
+! green
+*.color2:       GREEN1
+*.color10:      GREEN2
+
+! yellow
+*.color3:       YELLOW1
+*.color11:      YELLOW2
+
+! blue
+*.color4:      	BLUE1 
+*.color12:     	BLUE2
+
+! magenta
+*.color5:       MAGENTA1
+*.color13:      MAGENTA2
+
+! cyan
+*.color6:       CYAN1
+*.color14:      CYAN2
+
+! white
+*.color7:       WHITE1
+*.color15:      WHITE2
+
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+!rofi.color-enabled: true
+!rofi.color-window: BLACK, BLACK, BLACK
+!rofi.color-normal: BLACK, WHITE, BLACK, BLACK, BLACK
+!rofi.color-active: WHITE, BLACK, BLACK, BLACK, BLACK
+!rofi.color-urgent: BLACK, WHITE, BLACK, BLACK, BLACK
+
+! === rofi ===
+
+rofi.modi:                           ssh,window,drun,run
+rofi.sidebar-mode:                   true
+rofi.terminal:                       urxvt
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+rofi.opacity:                        100
+rofi.width:                          50
+rofi.lines:                          4
+rofi.columns:                        1
+rofi.font:                           Hack 9
+rofi.fg:                             WHITE
+rofi.bg:                             BLACK
+rofi.fg-active:                      #34405a
+rofi.fg-urgent:                      #34405a
+rofi.hlfg-active:                    #5e73a0
+rofi.hlfg-urgent:                    #5e73a0
+rofi.bg-active:                      #34405a
+rofi.bg-urgent:                      #34405a
+rofi.hlbg-active:                    #5d729f
+rofi.hlbg-urgent:                    #5d729f
+rofi.bgalt:                          #5671a0
+rofi.hlfg:                           #34405a
+rofi.hlbg:                           #34405a
+rofi.bc:                             #789ee1
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: BLACK, WHITE, BLACK, WHITE, BLACK
+rofi.color-active: BLACK, WHITE, BLACK, WHITE, BLACK
+rofi.color-urgent: BLACK, WHITE, BLACK, WHITE, BLACK
+
+!                  'background', 'border'
+rofi.color-window: BLACK,      BLACK
+rofi.bw:                             0
+rofi.location:                       0
+rofi.padding:                        0
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+rofi.fuzzy:                          false
+rofi.line-margin:                    2
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.markup-rows:                    false
+rofi.scrollbar-width:                0
+
+rofi.height: 92%
+
+!
+!!!!! TWILIGHT
+!!
+!! Generated with :
+!! XRDB2Xreources.py
+!!
+!*.foreground:  #ffffd4
+!*.background:  #050505
+!*.cursorColor: #ffffff
+!!
+!! Black
+!*.color0:      #141414
+!*.color8:      #262626
+!!
+!! Red
+!*.color1:      #c06d44
+!*.color9:      #de7c4c
+!!
+!! Green
+!*.color2:      #afb97a
+!*.color10:     #ccd88c
+!!
+!! Yellow
+!*.color3:      #c2a86c
+!*.color11:     #e2c47e
+!!
+!! Blue
+!*.color4:      #44474a
+!*.color12:     #5a5e62
+!!
+!! Magenta
+!*.color5:      #b4be7c
+!*.color13:     #d0dc8e
+!!
+!! Cyan
+!*.color6:      #778385
+!*.color14:     #8a989b
+!!
+!! White
+!*.color7:      #ffffd4
+!*.color15:     #ffffd4
+!!
+!! Bold, Italic, Underline
+!*.colorBD:     #ffffd4
+!!*.colorIT:
+!!*.colorUL:
+!

@@ -1,0 +1,284 @@
+[mi]
+bg = #272727
+fg = #eeeeee
+;red = #d03c3e
+red = #eeeeee
+blue = #eeeeee
+alertbg = ${mi.fg}
+alertfg = ${mi.bg}
+
+[bar/mi]
+monitor = HDMI-1
+fixed-center = true;
+width = 80%
+offset-x = 10%
+offset-y = 10
+height = 16
+background = ${mi.bg}
+foreground = ${mi.fg}
+line-size = 0
+border-size = 2
+border-color = ${mi.bg}
+font-0 = SF Mono:style=Medium:size=9;1
+bottom = false
+tray-position = right
+tray-offset-x = 50
+tray-padding = 3
+tray-transparent = true
+;override-redirect = true
+module-margin-left = 1
+module-margin-right = 2
+padding-left = 1
+padding-right = 1
+modules-right = bspwm date
+modules-left = pulseaudio filesystem-mi memory-mi cpu-mi proc temperature-mi eth uptime gee ayy battery 
+ 
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = 1;cavatappi
+ws-icon-1 = 2;penne rigate
+ws-icon-2 = 3;tortiglioni
+ws-icon-3 = 4;cellentani
+ws-icon-default = ♟
+
+format = <label-state> <label-mode>
+label-monitor = %name%
+label-focused = %icon%
+label-focused-padding = 2
+label-focused-margin = 0
+;label-focused-background = ${mi.blue}
+;label-focused-foreground = ${mi.bg}
+label-focused-background = ${mi.bg}
+label-focused-foreground = ${mi.red}
+label-occupied = %icon%
+label-occupied-padding = 2
+label-occupied-margin = 0
+label-occupied-background = ${mi.bg}
+label-occupied-foreground = ${mi.fg}
+label-urgent = %icon%!
+label-urgent-padding = 2
+label-urgent-margin = 0
+label-urgent-background = ${mi.bg}
+label-urgent-foreground = ${mi.fg}
+label-empty = %icon%
+label-empty-padding = 2
+label-empty-background = ${mi.bg}
+label-empty-foreground = ${mi.fg}
+label-empty-margin = 0
+; Separator in between workspaces
+label-separator = .
+label-separator-foreground = ${mi.bg}
+
+[module/filesystem-mi]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-foreground = ${mi.fg}
+label-mounted = SSD: %percentage_used%%
+
+
+[module/cpu-mi]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU: "
+label = %percentage:2%%
+format-prefix-foreground = ${mi.fg}
+format-prefix-background = ${mi.bg}
+
+
+[module/memory-mi]
+type = internal/memory
+interval = 2
+format-prefix = "MEM: "
+format-prefix-foreground = ${mi.fg}
+label = %percentage_used%%
+
+
+
+
+[module/wlan]
+type = internal/network
+interface = wlp4s0
+interval = 3.0
+format-connected = WLAN: <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+format-disconnected =
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${mi.fg}
+
+
+[module/eth]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+format-connected-underline = ${mi.fg}
+label-connected = %local_ip%
+format-disconnected =
+
+
+[module/date]
+type = internal/date
+interval = 10
+date =
+date-alt = " %Y-%m-%d"
+;time = %H:%M %p
+time = %a %m/%d/%y %I:%M %p
+time-alt = %H:%M:%S
+format-prefix = 
+format-prefix-foreground = ${mi.fg}
+format-underline = #0a6cf5
+label = %date% %time%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-prefix = "Bat: "
+format-prefix-foreground = ${colors.foreground}
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+
+[module/temperature-mi]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = TEMP: <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${mi.fg}
+label-warn-background = ${mi.bg}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${mi.fg}
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume =<label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-volume =VOL: %percentage%%
+format-volume-foreground = ${mi.fg}
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+;label-muted = muted
+label-muted =VOL: %percentage%%
+label-muted-foreground = ${mi.red}
+label-muted-background = ${mi.bg}
+;label-muted-foreground = ${mi.bg}
+;label-muted-background = ${mi.blue}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click (unreleased)
+click-right = pavucontrol &
+; click-middle = 
+
+
+########################
+	;Custom Modules
+########################
+
+[module/gee]
+type = custom/script
+label-foreground = ${mi.fg}
+exec = echo "/g/ $(python3 ~/.scripts/scrapechan.py)"
+interval = 300
+
+[module/ayy]
+type = custom/script
+label-foreground = ${mi.fg}
+exec = echo "/a/ $(python3 ~/.scripts/scrapechan.py a)"
+interval = 300
+
+[module/bright]
+type = custom/script
+label-foreground = ${mi.fg}
+exec = echo BL: $(/home/uwuzi/.scripts/bright.sh)%
+interval = 30
+
+[module/uptime]
+type = custom/script
+label-foreground = ${mi.fg}
+exec = echo "UP: $(~/.scripts/system-uptime-pretty.sh)"
+interval = 120
+
+
+[module/proc]
+type = custom/script
+exec = echo "PROC: $(ps -A --no-headers | wc -l)"
+interval = 120
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 20
+margin-bottom = 0

@@ -1,0 +1,145 @@
+!.Xresources kuro
+
+! PALETTE
+#define BLACK			#ffffff
+#define GREY			#858585
+#define WHITE			#050505
+#define HIGHLIGHT #ccff00
+
+! COLORS (SPECIAL)
+URxvt*background: 				BLACK
+URxvt*foreground: 				WHITE
+URxvt*cursorColor:				WHITE
+URxvt*highlightColor: 		HIGHLIGHT
+URxvt*highlightTextColor:	WHITE
+URxvt*underlineColor: 		WHITE
+
+! 1 - Literals - strings, ints...
+! 2 - Types - char, int ...
+! 3 - Gutter numbers, "for", "if", "sizeof"
+! 4 - Comments
+
+
+! COLORS (16)
+URxvt*color0: 				BLACK
+URxvt*color1: 				WHITE 
+URxvt*color2: 				WHITE 
+URxvt*color3: 				WHITE
+URxvt*color4: 				GRAY
+URxvt*color5: 				WHITE
+URxvt*color6: 				WHITE
+URxvt*color7: 				WHITE
+URxvt*color8: 				WHITE
+URxvt*color9: 				WHITE
+URxvt*color10: 				WHITE
+URxvt*color11: 				WHITE
+URxvt*color12: 				WHITE
+URxvt*color13: 				WHITE
+URxvt*color14: 				WHITE
+URxvt*color15: 				HIGHLIGHT
+
+! FONT
+URxvt.font:						xft:Hack:style=Medium:size=9
+URxvt.boldFont:				xft:Hack:style=Bold:size=9
+URxvt.italicFont:			xft:Hack:style=Medium Italic:size=9
+URxvt.boldItalicFont:	xft:Hack:style=Bold Italic:size=9
+Xft*antialias: 				True
+URxvt.letterSpace:    0
+Xft.autohint:   			0
+!Xft.dpi:        			96
+Xft.hinting:    			True
+Xft.hintstyle:  			hintfull
+Xft.lcdfilter:  			lcddefault
+Xft.rgba:       			none
+
+! MOUSE
+URxvt*mouseWheelScrollPage: true
+	
+! TERM
+URxvt.termName: 			rxvt-256color
+URxvt.iso14755:         	False
+!URxvt.reverseVideo:     	True
+URxvt*scrollBar: 			false
+URxvt*saveLines:			1000
+URxvt*internalBorder: 10
+!URxvt*externalBorder: 		10
+URxvt*geometry:			78x27
+URxvt*depth: 16
+URxvt.urlLauncher:      	/usr/bin/firefox
+URvxt.url-select.button:  1
+URxvt.url-select.launcher:/usr/bin/firefox-bin
+URxvt.matcher.button:   	1
+URxvt*perl-ext-common:		default,url-select,vtwheel,matcher
+ URxvt.clipboard.autocopy: True
+
+! KEYSYM
+!URxvt.keysym.Home:         \033[1~
+!URxvt.keysym.End:          \033[4~
+URxvt.keysym.Control-Up:   	\033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-0x2b: 	perl:font-size:increase
+URxvt.keysym.Control-0x2d: 	perl:font-size:decrease
+URxvt.keysym.M-u:						perl:url-select:select_next
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+URxvt.keysym.C-7: command:\033]11;#ff0000\007
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+!rofi.color-enabled: true
+!rofi.color-window: BLACK, BLACK, BLACK
+!rofi.color-normal: BLACK, WHITE, BLACK, BLACK, BLACK
+!rofi.color-active: WHITE, BLACK, BLACK, BLACK, BLACK
+!rofi.color-urgent: BLACK, WHITE, BLACK, BLACK, BLACK
+
+! === rofi ===
+
+rofi.modi:                           ssh,window,drun,run
+rofi.sidebar-mode:                   true
+rofi.terminal:                       urxvt
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+rofi.opacity:                        100
+rofi.width:                          50
+rofi.lines:                          4
+rofi.columns:                        1
+rofi.font:                           Hack 9
+rofi.fg:                             WHITE
+rofi.bg:                             BLACK
+rofi.fg-active:                      #34405a
+rofi.fg-urgent:                      #34405a
+rofi.hlfg-active:                    #5e73a0
+rofi.hlfg-urgent:                    #5e73a0
+rofi.bg-active:                      #34405a
+rofi.bg-urgent:                      #34405a
+rofi.hlbg-active:                    #5d729f
+rofi.hlbg-urgent:                    #5d729f
+rofi.bgalt:                          #5671a0
+rofi.hlfg:                           #34405a
+rofi.hlbg:                           #34405a
+rofi.bc:                             #789ee1
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: BLACK, WHITE, BLACK, WHITE, BLACK
+rofi.color-active: BLACK, WHITE, BLACK, WHITE, BLACK
+rofi.color-urgent: BLACK, WHITE, BLACK, WHITE, BLACK
+
+!                  'background', 'border'
+rofi.color-window: BLACK,      BLACK
+rofi.bw:                             0
+rofi.location:                       0
+rofi.padding:                        0
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+rofi.fuzzy:                          false
+rofi.line-margin:                    2
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.markup-rows:                    false
+rofi.scrollbar-width:                0
+
+rofi.height: 92%

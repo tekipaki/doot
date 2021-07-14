@@ -1,0 +1,42 @@
+#! /bin/sh
+
+
+########## BSPWM ###########
+~/.scripts/force_single_display.sh &
+bspc config remove_unplugged_monitors true
+bspc config remove_disabled_monitors true
+bspc monitor -d 1 2 3 4
+#bspc monitor HDMI-1 -d 1 2 3 4
+
+bspc config normal_border_color 	"#dddddd"
+bspc config active_border_color 	"#dddddd"
+bspc config focused_border_color 	"#000000"
+bspc config presel_feedback_color "#000000"
+
+
+bspc config border_width         	1
+bspc config window_gap          	0
+bspc config top_padding         	14
+bspc config left_padding         	0
+bspc config right_padding        	0
+bspc config bottom_padding       	0
+
+bspc config split_ratio          	0.50
+bspc config borderless_monocle   	true
+bspc config gapless_monocle      	true
+bspc config focus_follows_pointer 	false
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+
+#bspc rule -a Zathura state=tiled
+
+########## STARTUP ###########
+xsetroot -cursor_name left_ptr &
+polybar -c ~/.config/polybar/kuro kuro &
+setxkbmap -option caps:swapescape  &
+dunst &
+xrdb ~/.config/Xresources/kuro3 &
+redshift -x -PO 5600 &
+pkill pulseaudio; pulseaudio -D &
+sxhkd -c ~/.config/sxhkd/kuro &

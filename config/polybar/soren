@@ -1,0 +1,110 @@
+[soren]
+black = #050505
+white = #e4d7bd
+dgreen = #23261b
+lgreen = #383c2e
+mgray = #5f5f5f
+
+[bar/soren]
+monitor = HDMI-1
+height = 14
+background = ${soren.black}
+foreground = ${soren.white}
+font-0 = IBM Plex Mono:style=Medium:size=9;1
+line-size = 2
+line-color = ${soren.white}
+bottom = false
+module-margin-left = 4
+module-margin-right = 4
+padding-left = 4
+padding-right = 4
+;tray-position = center
+modules-left = pulseaudio eth 
+modules-center = bspwm
+modules-right = date
+ 
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = 1;premier
+ws-icon-1 = 2;seconde
+ws-icon-2 = 3;troisième
+ws-icon-3 = 4;quatrième
+;ws-icon-default = ♟
+
+format = <label-state> <label-mode>
+label-monitor = %name%
+label-focused = %icon%
+label-focused-padding = 2
+label-focused-margin = 0
+label-focused-background = ${soren.black}
+label-focused-foreground = ${soren.white}
+label-focused-underline = ${soren.white}
+label-occupied = %icon%
+label-occupied-padding = 2
+label-occupied-margin = 0
+label-occupied-background = ${soren.black}
+label-occupied-foreground = ${soren.white}
+label-urgent = %icon%!
+label-urgent-padding = 2
+label-urgent-margin = 0
+label-urgent-background = ${soren.black}
+label-urgent-foreground = ${soren.white}
+label-empty = %icon%
+label-empty-padding = 2
+label-empty-background = ${soren.black}
+label-empty-foreground = ${soren.white}
+label-empty-margin = 0
+label-separator = .
+label-separator-foreground = ${soren.black}
+
+[module/eth]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+;format-connected-underline = ${soren.white}
+label-connected = %local_ip%
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 10
+date =
+date-alt = " %Y-%m-%d"
+;time = %H:%M %p
+time = %a %m/%d/%y %I:%M %p
+time-alt = %H:%M:%S
+format-prefix = 
+format-prefix-foreground = ${soren.white}
+;format-underline = #0a6cf5
+label = %date% %time%
+click-right = orage &
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume =<label-volume>
+label-volume =VOL: %percentage%%
+format-volume-foreground = ${soren.white}
+label-muted =VOL: %percentage%%
+label-muted-underline = ${soren.white}
+label-muted-foreground = ${soren.white}
+label-muted-background = ${soren.black}
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+click-right = pavucontrol &
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 20
+margin-bottom = 0
